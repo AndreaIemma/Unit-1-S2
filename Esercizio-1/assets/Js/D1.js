@@ -1,5 +1,3 @@
-
-
 /*
 REGOLE
 - Tutte le risposte devono essere scritte in JavaScript

@@ -1,11 +1,11 @@
 /* ESERCIZIO 1
  Scrivi una funzione di nome "area", che riceve due parametri (l1, l2) e calcola l'area del rettangolo associato.
 */
-console.log("***** Esercizio 1 *****")
+console.log("***** Esercizio 1 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function area(b, h) {
-    return b * h;
+  return b * h;
 }
 
 console.log(area(5, 10));
@@ -15,15 +15,15 @@ console.log(area(5, 10));
  La funzione deve ritornare la somma dei due parametri, ma se il valore dei due parametri è il medesimo deve invece tornare
  la loro somma moltiplicata per tre.
 */
-console.log("***** Esercizio 2 *****")
+console.log("***** Esercizio 2 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function crazySum(a, b) {
-    if (a === b) {
-        return 3 * (a + b);
-    } else {
-        return a + b;
-    }
+  if (a === b) {
+    return 3 * (a + b);
+  } else {
+    return a + b;
+  }
 }
 
 console.log(crazySum(5, 5));
@@ -33,16 +33,16 @@ console.log(crazySum(5, 10));
  Scrivi una funzione di nome "crazyDiff" che calcola la differenza assoluta tra un numero fornito come parametro e 19.
  Deve inoltre tornare la differenza assoluta moltiplicata per tre qualora il numero fornito sia maggiore di 19.
 */
-console.log("***** Esercizio 3 *****")
+console.log("***** Esercizio 3 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function crazyDiff(num) {
-    let diff = Math.abs(num - 19);
-    if (num > 19) {
-        return diff * 3;
-    } else {
-        return diff;
-    }
+  let diff = Math.abs(num - 19);
+  if (num > 19) {
+    return diff * 3;
+  } else {
+    return diff;
+  }
 }
 console.log(crazyDiff(25)); // Dà 18 perché 25 è maggiore di 19, quindi ritorna (25-19)*3
 console.log(crazyDiff(10)); // Dà 9 perché 10 non è maggiore di 19, quindi ritorna 19-10
@@ -51,38 +51,62 @@ console.log(crazyDiff(10)); // Dà 9 perché 10 non è maggiore di 19, quindi ri
  Scrivi una funzione di nome "boundary" che accetta un numero intero n come parametro, e ritorna true se n è compreso tra 20 e 100 (incluso) oppure
  se n è uguale a 400.
 */
-console.log("***** Esercizio 4 *****")
+console.log("***** Esercizio 4 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
+const boundary = function (n) {
+  if ((n > 20 && n <= 100) || n === 400) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
+console.log(boundary(97));
 
 /* ESERCIZIO 5
  Scrivi una funzione di nome "epify" che accetta una stringa come parametro.
  La funzione deve aggiungere la parola "EPICODE" all'inizio della stringa fornita, ma se la stringa fornita comincia già con "EPICODE" allora deve
  ritornare la stringa originale senza alterarla.
 */
-console.log("***** Esercizio 5 *****")
+console.log("***** Esercizio 5 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
+const epify = function (stringa) {
+  if (stringa.startsWith("EPICODE")) {
+    return stringa;
+  } else {
+    return "EPICODE " + stringa;
+  }
+};
+console.log(epify("EPICODERS"));
+console.log(epify("Hello"));
 
 /* ESERCIZIO 6
  Scrivi una funzione di nome "check3and7" che accetta un numero positivo come parametro. La funzione deve controllare che il parametro sia un multiplo
  di 3 o di 7. (Suggerimento: usa l'operatore modulo)
 */
-console.log("***** Esercizio 6 *****")
-/* SCRIVI QUI LA TUA RISPOSTA */
 
+console.log("***** Esercizio 6 *****");
+/* SCRIVI QUI LA TUA RISPOSTA */
+const check3and7 = function (n) {
+  if (n >= 0 && (n % 3 === 0 || n % 7 === 0)) {
+    return true;
+  } else {
+    return false;
+  }
+};
+console.log(check3and7(14))
 
 /* ESERCIZIO 7
  Scrivi una funzione di nome "reverseString", il cui scopo è invertire una stringa fornita come parametro (es. "EPICODE" --> "EDOCIPE")
 */
-console.log("***** Esercizio 7 *****")
+console.log("***** Esercizio 7 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function reverseString(EPICODE) {
-    let codeepic = "EPICODE";
-    return codeepic.split('').reverse().join('');
+  let codeepic = "EPICODE";
+  return codeepic.split("").reverse().join("");
 }
 
 console.log(reverseString("EPICODE"));
@@ -91,47 +115,50 @@ console.log(reverseString("EPICODE"));
  Scrivi una funzione di nome "upperFirst", che riceve come parametro una stringa formata da diverse parole.
  La funzione deve rendere maiuscola la prima lettera di ogni parola contenuta nella stringa.
 */
-console.log("***** Esercizio 8 *****")
+console.log("***** Esercizio 8 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function upperFirst(string) {
-    let words = string.split(' ');
-    console.log(words);
-    let final = [];
-    for (let i = 0; i < words.lenght; i++) {
-        let first = word[i].charAt(0);
-        first = first.toUppercase();
-        let cut = words[i].slice(1);
-        let newWords = first + cut;
-        final.push(newWords);
-
-    }
-    console.log(final.join(' '));
+  let words = string.split(" ");
+  console.log(words);
+  let final = [];
+  for (let i = 0; i < words.lenght; i++) {
+    let first = word[i].charAt(0);
+    first = first.toUppercase();
+    let cut = words[i].slice(1);
+    let newWords = first + cut;
+    final.push(newWords);
+  }
+  console.log(final.join(" "));
 }
 
-upperFirst("oggi è il venti giugno duemilaventiquattro e siamo in aula per il corso epicode")
+upperFirst(
+  "oggi è il venti giugno duemilaventiquattro e siamo in aula per il corso epicode"
+);
 
 /* ESERCIZIO 9
  Scrivi una funzione di nome "cutString", che riceve come parametro una stringa. La funzione deve creare una nuova stringa senza il primo e l'ultimo carattere
  della stringa originale.
 */
-console.log("***** Esercizio 9 *****")
+console.log("***** Esercizio 9 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
-
+const cutString = function (str) {
+    return str.slice(1, str.length - 1)
+  }
+  console.log(cutString("EPICODE"))
 
 /* ESERCIZIO 10
  Scrivi una funzione di nome "giveMeRandom", che accetta come parametro un numero n e ritorna un'array contenente n numeri casuali inclusi tra 0 e 10.
 */
-console.log("***** Esercizio 10 *****")
+console.log("***** Esercizio 10 *****");
 /* SCRIVI QUI LA TUA RISPOSTA */
 
 function giveMeRandom(n) {
-    let casualnumber = [];
-    for (let i = 0; i < n; i++) {
-        casualnumber.push(Math.floor(Math.random() * 10));
-    }
-    return casualnumber;
+  let casualnumber = [];
+  for (let i = 0; i < n; i++) {
+    casualnumber.push(Math.floor(Math.random() * 10));
+  }
+  return casualnumber;
 }
 console.log(giveMeRandom(5));
-

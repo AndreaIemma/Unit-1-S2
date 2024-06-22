@@ -120,7 +120,7 @@ console.log(charactersNames)
 console.log("***** Esercizio 2 *****")
 
 for (let i = 0; i < starWarsCharacters.length; i++) {
-  charactersNames.push(starWarsCharacters[i].name);
+  charactersNames.push(starWarsCharacters[i].na)
 }
 console.log(charactersNames)
 
